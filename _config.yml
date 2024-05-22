@@ -9,8 +9,6 @@ header_pages:
   - about.md
 
 minima:
-  skin: dark
-
-social_links:
-  - { platform: linkedin, user_url: "https://www.linkedin.com/in/peter-l-brown/" }
-  - { platform: github,   user_url: "https://github.com/tiberiusbrown" }
+  social_links:
+    - { platform: linkedin, user_url: "https://www.linkedin.com/in/peter-l-brown/" }
+    - { platform: github,   user_url: "https://github.com/tiberiusbrown" }
