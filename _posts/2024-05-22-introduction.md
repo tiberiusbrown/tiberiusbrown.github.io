@@ -1,7 +1,6 @@
 ---
 layout: post
 title: "Introduction"
-author: "Peter Brown"
 ---
 
 I have worked on a number of projects related to the [Arduboy](https://www.arduboy.com/), a handheld game system running on an [ATmega32U4](https://www.microchip.com/en-us/product/atmega32u4).

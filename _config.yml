@@ -1,7 +1,6 @@
 theme: minima
 title: Peter Brown
-author:
-  name: Peter Brown
+author: Peter Brown
 description: Chess/Arduboy projects
 
 header_pages:
