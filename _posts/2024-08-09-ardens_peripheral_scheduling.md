@@ -77,7 +77,7 @@ Finally, there needs to be an efficient mechanism for scheduling a peripheral up
 
 A natural approach would be to use a min-priority queue containing cycle-peripheral pairs, so that the top of the queue always has the peripheral with the least cycle. However, there are some downsides to this approach.
 
-- When a peripheral's state changes due to an SFR access, it may need to adjust its scheduled cycle, and there's no easy way to do that with a priority queue other than inserting a new entry for that peripheral, leaving the previously scheduled entries to remain in the queue.
+- When a peripheral's state changes due to an SFR access, it may need to adjust its scheduled cycle, and there's no easy way to do that. You could perform a linear search to locate the peripheral entry within the queue, or just insert a new entry for that peripheral, leaving the previously scheduled entry in the queue.
 - Insertion and removal of peripheral entries are both $\log n$, and in practice the continual heap manipulation remains somewhat of a performance bottleneck.
 
 Instead, Ardens uses a combination of a bitset and a linear array of scheduled cycles (one entry per peripheral), as well as tracking which peripheral has the next scheduled cycle.
@@ -154,7 +154,7 @@ private:
         while(s != 0)
         {
             uint32_t t = s & uint32_t(-(int32_t)s);
-            int r = (unsigned)__builtin_ctz(s);
+            int r = __builtin_ctz(s);
             uint64_t tc = cycles[r];
             if(tc < c)
             {
